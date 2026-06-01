@@ -1,0 +1,7 @@
+node_modules
+.alchemy
+dist
+*.local
+.env
+frontend/dist
+src/frontend.ts
