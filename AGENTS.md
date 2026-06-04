@@ -85,13 +85,13 @@ cd frontend && npx vite dev
 
 ## Commands
 
-| Run                   | What it does                          |
-| --------------------- | ------------------------------------- |
-| `pnpm build:frontend` | Build SolidJS app into frontend/dist/ |
+| Run                   | What it does                                   |
+| --------------------- | ---------------------------------------------- |
+| `pnpm build:frontend` | Build SolidJS app into frontend/dist/          |
 | `vp run deploy`       | Deploy stack (StaticSite builds automatically) |
-| `vp run destroy`      | Tear down stack                       |
-| `vp run dev`          | Local worker with hot reload          |
-| `vp check`            | Lint + fmt + typecheck                |
-| `vp fmt`              | Format (oxfmt)                        |
-| `vp test`             | Run all tests (vitest)                |
-| `vp run typecheck`    | TypeScript 7 check                    |
+| `vp run destroy`      | Tear down stack                                |
+| `vp run dev`          | Local worker with hot reload                   |
+| `vp check`            | Lint + fmt + typecheck                         |
+| `vp fmt`              | Format (oxfmt)                                 |
+| `vp test`             | Run all tests (vitest)                         |
+| `vp run typecheck`    | TypeScript 7 check                             |

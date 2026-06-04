@@ -39,7 +39,7 @@ function extractSessionName(summary: string, meetingName: string): string {
     "",
   );
   cleaned = cleaned.replace(
-    new RegExp(`^${meetingName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*-\\\s*`),
+    new RegExp(`^${meetingName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*-\\s*`),
     "",
   );
   return cleaned.trim();
@@ -109,11 +109,13 @@ export function ScheduleView(props: ScheduleViewProps) {
       g.events.push(e);
       g.dates.push(e.startTime);
     }
-    return [...map.values()].sort((a, b) => {
-      const aMin = Math.min(...a.dates.map((d) => new Date(d).getTime()));
-      const bMin = Math.min(...b.dates.map((d) => new Date(d).getTime()));
-      return aMin - bMin;
-    });
+    return [...map.values()]
+      .filter((g) => g.events.some((e) => new Date(e.startTime).getTime() > now()))
+      .sort((a, b) => {
+        const aMin = Math.min(...a.dates.map((d) => new Date(d).getTime()));
+        const bMin = Math.min(...b.dates.map((d) => new Date(d).getTime()));
+        return aMin - bMin;
+      });
   };
 
   return (
